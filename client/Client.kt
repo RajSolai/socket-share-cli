@@ -1,33 +1,32 @@
-package client;
+package client
 
+import java.net.Socket
+import java.nio.file.Files
+import java.io.DataOutputStream
+import java.io.File
+import java.lang.Exception
+import java.util.*
 
-import java.io.DataOutputStream;
-import java.io.File;
-import java.net.Socket;
-import java.nio.file.Files;
-import java.util.Scanner;
-
-public class Client{
-    public Client(){
-        try{
-            String path;
-	        String ip;
-            Scanner inputscanner = new Scanner(System.in);
-            System.out.println("Enter the file path to Transfer:");
-            path = inputscanner.nextLine();
-	        System.out.println("Enter the IP address of the Revicer");
-	        ip = inputscanner.nextLine();
-            Socket soc = new Socket(ip,8080);
-            System.out.println("READY TO SEND FILE");
-            File filetoSend = new File(path);
-            byte[] bytes = Files.readAllBytes(filetoSend.toPath());
-            DataOutputStream dos = new DataOutputStream(soc.getOutputStream());
-            dos.writeInt(bytes.length);
-            dos.write(bytes);
-            System.out.println("File sent to successfully !.");
-        }
-        catch(Exception e){
-            System.out.println(e.getMessage());
+class Client {
+    init {
+        try {
+            val path: String
+            val ip: String
+            val inputscanner = Scanner(System.`in`)
+            println("Enter the file path to Transfer:")
+            path = inputscanner.nextLine()
+            println("Enter the IP address of the Revicer")
+            ip = inputscanner.nextLine()
+            val soc = Socket(ip, 8080)
+            println("READY TO SEND FILE")
+            val filetoSend = File(path)
+            val bytes = Files.readAllBytes(filetoSend.toPath())
+            val dos = DataOutputStream(soc.getOutputStream())
+            dos.writeInt(bytes.size)
+            dos.write(bytes)
+            println("File sent to successfully !.")
+        } catch (e: Exception) {
+            println(e.message)
         }
     }
 }
