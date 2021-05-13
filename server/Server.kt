@@ -36,6 +36,7 @@ class Server {
             val filename = "socket-share" + dtf.format(LocalDateTime.now()) + ".dat"
             val fos = FileOutputStream(filename)
             fos.write(data)
+            fos.close()
         } catch (e: Exception) {
             println(e.message)
         }

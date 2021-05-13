@@ -25,6 +25,7 @@ class Client {
             dos.writeInt(bytes.size)
             dos.write(bytes)
             println("File sent to successfully !.")
+            dos.close()
         } catch (e: Exception) {
             println(e.message)
         }
