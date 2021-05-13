@@ -11,7 +11,7 @@ import java.lang.Exception
 
 class Server {
     private val ipAddress :String get() {
-            var str = "NULL"
+            var str = "null"
             try {
                 val pingsocket = DatagramSocket()
                 pingsocket.connect(InetAddress.getByName("8.8.8.8"), 10002)
