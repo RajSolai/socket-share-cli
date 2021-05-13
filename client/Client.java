@@ -10,8 +10,8 @@ import java.util.Scanner;
 public class Client{
     public Client(){
         try{
-            String path = null;
-	        String ip = null;
+            String path;
+	        String ip;
             Scanner inputscanner = new Scanner(System.in);
             System.out.println("Enter the file path to Transfer:");
             path = inputscanner.nextLine();
