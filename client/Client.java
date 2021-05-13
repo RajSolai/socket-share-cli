@@ -1,9 +1,11 @@
 package client;
 
-import java.io.*;
-import java.net.*;
-import java.util.*;
+
+import java.io.DataOutputStream;
+import java.io.File;
+import java.net.Socket;
 import java.nio.file.Files;
+import java.util.Scanner;
 
 public class Client{
     public Client(){
