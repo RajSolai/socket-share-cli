@@ -26,7 +26,7 @@ public class Server{
             FileOutputStream fos = new FileOutputStream(filename);
             fos.write(data);
         }catch(Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
     public String getIpAddress(){

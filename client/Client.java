@@ -27,7 +27,7 @@ public class Client{
             System.out.println("File sent to successfully !.");
         }
         catch(Exception e){
-            System.out.println(e);
+            System.out.println(e.getMessage());
         }
     }
 }
